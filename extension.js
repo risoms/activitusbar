@@ -343,6 +343,11 @@ function activate( context )
                                 }
                             } );
                         }
+                        else if( view.name.toLowerCase().indexOf( "editor." ) === 0 )
+                        {
+                            var commandName = view.name.substr( 7 );
+                            buttons[ view.name ] = addCommandButton( getIcon( view ), commandName, view.tooltip, view.label );
+                        }
                         else if( view.name.toLowerCase().indexOf( "command." ) === 0 )
                         {
                             var commandName = view.name.substr( 8 );
